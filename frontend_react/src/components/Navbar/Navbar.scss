@@ -1,0 +1,19 @@
+.app__navbar {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.25);
+
+  // give navbar a bluring shadow
+  backdrop-filter: blur(4px); 
+
+  -webkit-backdrop-filter: blur(4px);
+
+  // style border be transparent
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: fixed;
+}
