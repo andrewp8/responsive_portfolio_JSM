@@ -1,90 +1,98 @@
 .app__navbar {
-  width: 100%;
+	width: 100%;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.25);
+	padding: 1rem 2rem;
+	background: rgba(255, 255, 255, 0.25);
 
-  // give navbar a blurry shadow
-  backdrop-filter: blur(4px); 
+	// give navbar a blurry shadow
+	backdrop-filter: blur(4px);
 
-  -webkit-backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
 
-  // style the border to be transparent
-  border: 1px solid rgba(255, 255, 255, 0.18);
+	// style the border to be transparent
+	border: 1px solid rgba(255, 255, 255, 0.18);
 
-  // make the navbar stay still/ stay on top in this situation
-  position: fixed;
-  z-index: 2;
+	// make the navbar stay still/ stay on top in this situation
+	position: fixed;
+	z-index: 2;
 }
 
 .app__navbar-logo {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 
-  // SCSS can inherit/nesting the parent class's properties to it child class 
-  img {
-    // set the image's size when the screen devices are less than 2000px
-    width: 90px;
-    height: 20px;
+	// SCSS can inherit/nesting the parent class's properties to it child class
+	img {
+		// set the image's size when the screen devices are less than 2000px
+		width: 90px;
+		height: 20px;
 
-    // 2000px or above is XL screen devices
-    @media screen and (min-width: 2000px) {
-      width: 180px;
-      height: 40px;
-    }
-  }
+		// 2000px or above is XL screen devices
+		@media screen and (min-width: 2000px) {
+			width: 180px;
+			height: 40px;
+		}
+	}
 }
 
 .app__navbar-links {
-  flex: 1; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-  list-style: none;
+	list-style: none;
 
-  li {
-    margin: 0 1rem;
-    cursor: pointer;
+	li {
+		margin: 0 1rem;
+		cursor: pointer;
 
-    flex-direction: column;
+		flex-direction: column;
 
-    div {
-      width: 5px;
-      height: 5px;
-      background: transparent;
-      border-radius:  50%;
+		div {
+			/* 
+				Each <a> of this <li> is wrapped inside a <div>
+				Each <div> will have its individual space in the HTML because this <div> is inside a map().
+				Each <div> will have a border of 50% each corner, so it will be a shape of a circle regardless the size.
+				This <div>'s background is set to 'transparent'
+				This width,height set the size of the circle above the <a> in the navbar when hover.
+				The whole purpose is to make an effect for hover.
+			*/
+			width: 5px;
+			height: 5px;
+			background: transparent;
+			border-radius: 50%;
 
-      margin-bottom: 5px;
-    }
+			margin-bottom: 5px;
+		}
 
-    a {
-        color: var(--gray-color);
-        text-decoration: none;
-        flex-direction: column;
+		a {
+			color: var(--gray-color);
+			text-decoration: none;
+			flex-direction: column;
 
-        text-transform:  uppercase;
-        font-weight:  500;
+			text-transform: uppercase;
+			font-weight: 500;
 
-        transition: all 0.3s ease-in-out;
+			// set the total time for mouse hover on an anker tag change from main color to the 2nd color and fade out is 0.3 second. Maximum 2s
+			transition: all 0.3s ease-in-out;
 
-        a:hover {
-          color: var(--secondary-color);
-        }
-    }
+			// this :hover will affect only the <a> tag inside this <li>
+			&:hover {
+				color: var(--secondary-color);
+			}
+		}
+		// this :hover will affect only the <li> tag
+		&:hover {
+			div {
+				background: var(--secondary-color);
 
-    a:hover {
-      div {
-        background: var(--secondary-color);
-      }
-    }
-  }
+			}
+		}
+	}
 }
-
-
-

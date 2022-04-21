@@ -1,9 +1,13 @@
 import React from 'react'
+import { HiMenuAlt4, Hix } from 'react-icons/hi';
+import { motion } from 'framer-motion';
 
 import { images  } from '../../constants';
 import './Navbar.scss'
 
 const Navbar = () => {
+  const [toggle, setToggle] = useState(false);
+
   return (
     <nav className='app__navbar'>
       <div className='app__navbar-logo'>
@@ -17,6 +21,11 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+
+      <div className='app__navbar- menu'>
+        {/* onClick will trigger the setToggle above when mouse is clicked */}
+        <HiMenuAlt4 onClick={() => setToggle(false)} />
+      </div>
     </nav>
   )
 }
