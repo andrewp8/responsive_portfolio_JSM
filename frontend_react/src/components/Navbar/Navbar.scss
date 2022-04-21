@@ -8,12 +8,83 @@
   padding: 1rem 2rem;
   background: rgba(255, 255, 255, 0.25);
 
-  // give navbar a bluring shadow
+  // give navbar a blurry shadow
   backdrop-filter: blur(4px); 
 
   -webkit-backdrop-filter: blur(4px);
 
-  // style border be transparent
+  // style the border to be transparent
   border: 1px solid rgba(255, 255, 255, 0.18);
+
+  // make the navbar stay still/ stay on top in this situation
   position: fixed;
+  z-index: 2;
 }
+
+.app__navbar-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  // SCSS can inherit/nesting the parent class's properties to it child class 
+  img {
+    // set the image's size when the screen devices are less than 2000px
+    width: 90px;
+    height: 20px;
+
+    // 2000px or above is XL screen devices
+    @media screen and (min-width: 2000px) {
+      width: 180px;
+      height: 40px;
+    }
+  }
+}
+
+.app__navbar-links {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  list-style: none;
+
+  li {
+    margin: 0 1rem;
+    cursor: pointer;
+
+    flex-direction: column;
+
+    div {
+      width: 5px;
+      height: 5px;
+      background: transparent;
+      border-radius:  50%;
+
+      margin-bottom: 5px;
+    }
+
+    a {
+        color: var(--gray-color);
+        text-decoration: none;
+        flex-direction: column;
+
+        text-transform:  uppercase;
+        font-weight:  500;
+
+        transition: all 0.3s ease-in-out;
+
+        a:hover {
+          color: var(--secondary-color);
+        }
+    }
+
+    a:hover {
+      div {
+        background: var(--secondary-color);
+      }
+    }
+  }
+}
+
+
+

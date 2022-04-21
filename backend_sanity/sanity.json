@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "responsive_portfolio_JSM"
-  },
   "api": {
     "projectId": "w9tney01",
     "dataset": "production"
+  },
+  "project": {
+    "name": "responsive_portfolio_JSM"
   },
   "plugins": [
     "@sanity/base",
