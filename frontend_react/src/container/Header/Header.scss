@@ -51,6 +51,7 @@
   }
 }
 
+// The whole block [Hello I'm Andrew, Fullstack developer]
 .app__header-badge {
   width: 100%;
   display: flex;
@@ -58,6 +59,8 @@
   align-items: flex-end;
   flex-direction:  column;
 
+  //Hello I'm Andrew
+  // Fullstack developer
   .badge-cmp, .tag-cmp {
     padding: 1rem 2rem;
     background: var(--white-color);
@@ -93,7 +96,7 @@
   }
 }
 
-//Flutter, Redux, Scss
+//The whole block [Flutter, Redux, Scss]
 .app__header-circles {
   flex: 0.75;
   display: flex;
@@ -117,7 +120,7 @@
     }
   }
 
-  // Set size of each image
+  // Set size of each circle image
   // message to the viewer which tool is your strength by emphasize the image size
   div:nth-child(1) {
     width: 100px;
@@ -158,5 +161,36 @@
     div {
       margin: 1rem;
     }
+  }
+}
+
+//The whole block [profile, the big gray circle]
+.app__header-img {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+  
+  //profile img
+  img {
+    width: 100%;
+    object-fit: contain;
+    z-index: 1 ;
+  }
+
+  .overlay_circle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+    height: 90%;
+  }
+
+  @media screen and (max-width: 1200px) {
+    margin: 2rem 0;
   }
 }
