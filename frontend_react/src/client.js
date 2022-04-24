@@ -2,10 +2,14 @@ import sanityClient from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 
 export const client = sanityClient({
-  projectId: 'w9tney01',
-  dataset: '',
-  apiVersion: '',
+  projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
+  dataset: 'production',
+  apiVersion: '2022-04-20',
   useCdn: true,
-  token: '',
-
+  token: process.env.REACT_APP_SANITY_TOKEN,
 });
+
+const builder = imageUrlBuilder(client);
+
+// This is the code you will always write whenever you working with images using Sanity
+export const urlFor = (source) => builder.image(source);
