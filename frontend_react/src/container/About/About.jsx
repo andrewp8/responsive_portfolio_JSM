@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-import { images } from "../../constants";
-import "./About.scss";
+import { AppWrap } from '../../wrapper';
 import { urlFor, client } from "../../client";
+import "./About.scss";
 
 const About = () => {
 	const [abouts, setAbouts] = useState([]);
@@ -11,9 +11,8 @@ const About = () => {
 	useEffect(() => {
 		const query = '*[_type == "abouts"]';
 
-		client.fetch(query).then((data) => { 
-      setAbouts(data);
-    });
+		client.fetch(query).then((data) =>  
+      setAbouts(data))
 	}, []);
 
 	return (
@@ -36,7 +35,7 @@ const About = () => {
 						<h2 className="bold-text" margin={{ marginTop: 20 }}>
 							{about.title}
 						</h2>
-						<p className="p-text" margin={{ marginTop: 10 }}>
+						<p className="p-text" style={{ marginTop: 10 }}>
 							{about.description}
 						</p>
 					</motion.div>
@@ -46,4 +45,5 @@ const About = () => {
 	);
 };
 
-export default About;
+export default AppWrap(About, 'about');
+
