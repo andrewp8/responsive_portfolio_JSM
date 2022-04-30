@@ -1,0 +1,28 @@
+[1mdiff --git a/frontend_react/src/components/Navbar/Navbar.scss b/frontend_react/src/components/Navbar/Navbar.scss[m
+[1mindex 472b53de..d0f4a057 100644[m
+[1m--- a/frontend_react/src/components/Navbar/Navbar.scss[m
+[1m+++ b/frontend_react/src/components/Navbar/Navbar.scss[m
+[36m@@ -96,7 +96,7 @@[m
+ 	}[m
+ [m
+ 	// For screen that is 900px or above, the "app__navbar-links" is set to not be dislayed[m
+[31m-	@media screen and (min-width: 900px) {[m
+[32m+[m	[32m@media screen and (max-width: 900px) {[m
+ 		display: none;[m
+ 	}[m
+ }[m
+[1mdiff --git a/frontend_react/src/container/About/About.jsx b/frontend_react/src/container/About/About.jsx[m
+[1mindex 7a1524a9..05c9714c 100644[m
+[1m--- a/frontend_react/src/container/About/About.jsx[m
+[1m+++ b/frontend_react/src/container/About/About.jsx[m
+[36m@@ -11,8 +11,8 @@[m [mconst About = () => {[m
+ 	useEffect(() => {[m
+ 		const query = '*[_type == "abouts"]';[m
+ [m
+[31m-		client.fetch(query).then((data) =>  [m
+[31m-      setAbouts(data))[m
+[32m+[m		[32mclient.fetch(query)[m
+[32m+[m		[32m.then((data) => setAbouts(data))[m
+ 	}, []);[m
+ [m
+ 	return ([m

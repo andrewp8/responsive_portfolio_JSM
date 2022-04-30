@@ -96,7 +96,7 @@
 	}
 
 	// For screen that is 900px or above, the "app__navbar-links" is set to not be dislayed
-	@media screen and (min-width: 900px) {
+	@media screen and (max-width: 900px) {
 		display: none;
 	}
 }
